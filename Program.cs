@@ -20,14 +20,14 @@ namespace Telegram_Bot
     {
         private static Random _rand = new Random();
         private static string _lastButtonPressed;
-
+        private static string TOKEN = string.Empty;
         private static DataStorage DS { get; set; }
 
         static async Task Main(string[] args)
         {
             DS = new DataStorage();
 
-            var botClient = new TelegramBotClient("5095930902:AAGdpfiZouFU1-J2Egn8rvkG2NJoDPflIXk");
+            var botClient = new TelegramBotClient(TOKEN);
             using var cts = new CancellationTokenSource();
             var receiverOptions = new ReceiverOptions
             {
